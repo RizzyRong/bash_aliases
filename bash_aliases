@@ -54,3 +54,8 @@
 
 	# vpn aliases:
     alias vpn='openconnect --no-dtls --interface=sslvpn -c <FILE.p12> --authgroup <AUTHGROUP> -u <USERNAME> -p <CERT PASSWORD> <VPN SERVER>'
+
+	# gitpull: Update git projects. 
+	# I store my git repos in /opt so you will need to change that if you store yours somewhere else.
+	# You can 'cd -' when the command is complete to return to your previous working directory.
+    alias gitpull="cd /opt && find . -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;"
